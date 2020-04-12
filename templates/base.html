@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Women Safety</title>
+
+    <!-- ==============================================
+	Favicons
+	=============================================== -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}">
+
+    <!-- ==============================================
+	CSS VENDOR
+	=============================================== -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/magnific-popup.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/animate.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/vendor/bootstrap-dropdownhover.min.css' %}">
+
+    <!-- ==============================================
+	Custom Stylesheet
+	=============================================== -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+    <script src="{% static 'js/vendor/modernizr.min.js' %}"></script>
+
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- LOAD PAGE -->
+    <div class="animationload">
+        <div class="loader"></div>
+    </div>
+
+    <!-- BACK TO TOP SECTION -->
+    <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+    <!-- HEADER -->
+    <div class="header header-1">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-md-6">
+                        <!-- <p><em>Urgent : Awesome Template for Charity & Non-profit Site</em></p> -->
+                    </div>
+                    <div class="col-sm-5 col-md-6">
+                        <div class="sosmed-icon pull-right">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIDDLE BAR -->
+        <div class="middlebar">
+            <div class="container">
+
+
+                <div class="contact-info">
+                    <!-- INFO 1 -->
+                    <div class="box-icon-1">
+                        <div class="icon">
+                            <div class="fa fa-envelope-o"></div>
+                        </div>
+                        <div class="body-content">
+                            <div class="heading">Mail :</div>
+                            info@womensafety.com
+                        </div>
+                    </div>
+                    <!-- INFO 2 -->
+                    <div class="box-icon-1">
+                        <div class="icon">
+                            <div class="fa fa-phone"></div>
+                        </div>
+                        <div class="body-content">
+                            <div class="heading">Call Us :</div>
+                            +99 9999 9999
+                        </div>
+                    </div>
+                    <!-- INFO 3 -->
+                    <!-- <div class="box-act">
+                        <a href="#" class="btn btn-lg btn-primary">DONATE NOW</a>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVBAR SECTION -->
+        <div class="navbar-main">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'web:home' %}">HOME</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    ABOUT
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="about.html">About Us</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'web:complain' %}">COMPLAIN</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">CONTACT US</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'web:logout' %}">LOGOUT</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'web:login' %}">LOGIN</a>
+                                </li>
+                            {% endif %}
+
+                        </ul>
+                    </div>
+                </nav> <!-- -->
+
+            </div>
+        </div>
+
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <!-- FOOTER SECTION -->
+    <div class="footer" data-background="images/bg-map-dot.jpg">
+        <div class="content-wrap">
+            <div class="container">
+
+                <div class="row">                    
+
+                    <div class="col-sm-3 col-md-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                FOLLOW US
+                            </div>
+                            <div class="sosmed-icon primary">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fcopy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <p class="ftex">Copyright 2019 &copy;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS VENDOR -->
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/vendor/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.magnific-popup.min.js' %}"></script>
+
+    <!-- SENDMAIL -->
+    <script src="{% static 'js/vendor/validator.min.js' %}"></script>
+    <script src="{% static 'js/vendor/form-scripts.js' %}"></script>
+
+    {% block googlemap %}{% endblock %}
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>
